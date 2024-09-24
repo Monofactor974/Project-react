@@ -1,0 +1,133 @@
+/* Conteneur principal de la page de contact */
+.contact-container {
+  display: flex;
+  justify-content: center; /* Centre le contenu horizontalement */
+  align-items: center; /* Aligne les éléments en haut du conteneur */
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+  max-width: 1200px; /* Limite la largeur du conteneur principal */
+  margin: 0 auto; /* Centre le conteneur principal horizontalement */
+}
+
+/* Section d'en-tête */
+.contact-header {
+  text-align: center; /* Centre le texte */
+  margin-bottom: 20px; /* Espacement sous l'en-tête */
+}
+
+.contact-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-header p {
+  font-size: 1.2rem;
+}
+
+/* Séparateur */
+.contact-divider {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+/* Contenu de contact avec disposition flex */
+.contact-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; /* Permet aux éléments de se réorganiser sur des écrans plus petits */
+}
+
+/* Section d'information de contact */
+.contact-info {
+  flex: 2;
+  max-width: 600px; /* Limite la largeur du formulaire de contact */
+  text-align: center;
+}
+
+/* Détails de contact à droite */
+.contact-details {
+  flex: 1;
+  max-width: 600px; /* Limite la largeur des coordonnées */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center; /* Centre le texte dans les coordonnées */
+  margin: 0 auto; /* Centre horizontalement dans son conteneur */
+}
+
+/* Informations de contact */
+.contact-address {
+  text-align: center;
+}
+
+.contact-address h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.contact-address p {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+/* Carte Google Maps */
+.contact-map iframe {
+  border: 0;
+  width: 450px;
+  height: 450px;
+  border-radius: 8px;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Formulaire de contact */
+.contact-form {
+  width: 100%;
+  max-width: 700px; /* Limite la largeur du formulaire */
+  margin: 0 auto; /* Centre le formulaire horizontalement */
+}
+
+.contact-form h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.form-group textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.submit-button {
+  background-color: rgb(0, 0, 255);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+.submit-button:hover {
+  background-color: rgb(0, 0, 200);
+}

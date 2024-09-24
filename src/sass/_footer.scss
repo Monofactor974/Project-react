@@ -1,0 +1,111 @@
+.footer {
+  background-color: rgb(180, 180, 180);
+  border-radius: 3px;
+  padding: 40px 20px; /* Réduit le padding pour les petits écrans */
+  box-shadow: 2px 2px 5px rgba(25, 100, 119, 0.555);
+  display: flex;
+  flex-wrap: wrap; /* Permet aux éléments de se réorganiser sur petits écrans */
+  justify-content: space-between;
+  text-align: left;
+  font-size: 15px;
+}
+
+.footer > div {
+  flex: 1; /* Chaque colonne prend la même largeur */
+  min-width: 200px; /* Assure que les colonnes ne deviennent pas trop petites */
+}
+
+.footer .profil,
+.footer .liens,
+.footer .Rea-liens,
+.footer .Article-liens {
+  display: flex;
+  flex-direction: column; /* Aligne les éléments verticalement */
+  gap: 10px; /* Ajoute un espacement entre les éléments */
+}
+
+.li-link,
+.rea-link,
+.art-link {
+  color: black;
+  text-align: left;
+  font-size: 15px;
+}
+
+.footer p {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.information {
+  font-weight: normal;
+}
+
+.basdepage {
+  background-color: rgb(180, 180, 180);
+  text-align: center;
+}
+
+.DesigBy {
+  background-color: rgb(32, 32, 32);
+  color: #ffffff;
+  font-size: 17px;
+  padding: 10px;
+}
+
+/* Media queries pour rendre le footer responsive */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Empile les éléments verticalement */
+    text-align: center; /* Centre le texte pour les petits écrans */
+  }
+
+  .footer > div {
+    min-width: 100%; /* Les colonnes prennent toute la largeur */
+  }
+
+  .footer .profil,
+  .footer .liens,
+  .footer .Rea-liens,
+  .footer .Article-liens {
+    text-align: center; /* Centre le texte dans chaque section */
+  }
+
+  .li-link,
+  .rea-link,
+  .art-link {
+    text-align: center; /* Centre les liens */
+    display: inline-block; /* Assure que les liens sont centrés correctement */
+    margin: 5px 0; /* Ajoute un espacement vertical entre les liens */
+  }
+
+  .footer p {
+    font-size: 18px; /* Réduit la taille de la police */
+  }
+
+  .li-link,
+  .rea-link,
+  .art-link {
+    font-size: 14px; /* Réduit la taille des liens */
+  }
+
+  .DesigBy {
+    font-size: 15px; /* Réduit la taille de la police dans la section de design */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 10px; /* Réduit encore le padding pour les très petits écrans */
+  }
+
+  .footer p {
+    font-size: 16px; /* Réduit encore la taille de la police */
+  }
+
+  .li-link,
+  .rea-link,
+  .art-link {
+    font-size: 13px; /* Réduit la taille des liens */
+  }
+}

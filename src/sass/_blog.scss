@@ -1,0 +1,8 @@
+.card-container-blog1,
+.card-container-blog2 {
+  display: flex; /* Aligner les éléments horizontalement */
+  justify-content: center; /* Centre les cartes horizontalement */
+  gap: 30px; /* Espacement de 30px entre les cartes */
+  flex-wrap: wrap; /* Permet aux cartes de passer à la ligne suivante si nécessaire */
+  margin-top: 20px; /* Espacement au-dessus des conteneurs */
+}

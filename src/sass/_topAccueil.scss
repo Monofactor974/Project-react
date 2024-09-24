@@ -1,0 +1,83 @@
+/* Conteneur principal */
+.top-accueil {
+  position: relative; /* Position relative pour les éléments positionnés en absolu */
+  height: 100vh; /* Hauteur complète de la vue */
+  width: 100vw; /* Prendre toute la largeur de l'écran */
+  overflow: hidden; /* Assurer que les éléments ne débordent pas */
+}
+
+/* Image de fond */
+.top-accueil img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* Ajuste l'image pour couvrir le conteneur */
+  object-position: center; /* Centre l'image */
+}
+
+/* Conteneur de la présentation */
+.presentation {
+  position: absolute; /* Positionnement absolu par rapport au conteneur parent */
+  top: 20%; /* Ajuster la position par rapport au haut de l'image */
+  left: 50%; /* Centrer horizontalement */
+  transform: translateX(-50%); /* Ajuster pour le centrage parfait */
+  text-align: center; /* Centrer le texte */
+  color: aliceblue;
+  width: 100%;
+  padding: 0 20px; /* Ajouter du padding sur les côtés */
+}
+
+/* Titres */
+.presentation h1 {
+  font-size: 2rem; /* Taille de police relative */
+  margin: 0;
+}
+
+.presentation h2 {
+  font-size: 1.5rem; /* Taille de police relative */
+  margin: 0;
+}
+
+/* Bouton "En savoir plus" */
+.ensavoirplus {
+  padding: 15px 30px; /* Ajuster le padding pour les petits écrans */
+  margin: 20px auto 0;
+  color: white;
+  background: blue;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem; /* Taille de police relative */
+  display: inline-block;
+}
+
+/* Media Queries pour les petits écrans */
+@media (max-width: 768px) {
+  .presentation h1 {
+    font-size: 1.5rem; /* Réduire la taille du titre */
+  }
+
+  .presentation h2 {
+    font-size: 1.2rem; /* Réduire la taille du sous-titre */
+  }
+
+  .ensavoirplus {
+    padding: 10px 20px; /* Réduire le padding */
+    font-size: 0.9rem; /* Réduire la taille de police */
+    width: auto; /* Ajuster la largeur du bouton */
+  }
+}
+
+@media (max-width: 480px) {
+  .presentation h1 {
+    font-size: 1.2rem; /* Réduire encore la taille du titre */
+  }
+
+  .presentation h2 {
+    font-size: 1rem; /* Réduire encore la taille du sous-titre */
+  }
+
+  .ensavoirplus {
+    padding: 8px 15px; /* Réduire le padding */
+    font-size: 0.8rem; /* Réduire la taille de police */
+    width: auto; /* Ajuster la largeur du bouton */
+  }
+}

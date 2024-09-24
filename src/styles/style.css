@@ -1,0 +1,843 @@
+@charset "UTF-8";
+/* Styles de la barre de navigation */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(75, 75, 75);
+  height: 10vh;
+  padding: 0 20px;
+  position: relative;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navNom {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  margin-left: 20px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 20px;
+  margin-right: 10%;
+  font-size: 24px;
+}
+
+/* Style des liens de navigation */
+.nav-link {
+  text-decoration: none; /* Enlever la décoration par défaut des liens */
+  color: grey; /* Couleur des liens par défaut */
+  padding: 10px; /* Espacement interne */
+  transition: color 0.3s ease; /* Transition pour un effet de survol fluide */
+  display: block; /* Assurez-vous que les liens prennent toute la largeur disponible */
+}
+
+/* État des liens après avoir été visités ou par défaut */
+.nav-link:visited,
+.nav-link:link {
+  color: grey; /* S'assurer que les liens sont gris, même après avoir été visités */
+}
+
+/* Assurez-vous que le lien devient blanc au survol */
+.nav-link:hover {
+  color: white !important; /* Forcer la couleur blanche au survol */
+  background-color: transparent !important; /* Assurer qu'il n'y a pas de fond */
+}
+
+/* Menu burger caché par défaut */
+.burger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+/* Media Query pour les écrans sous 900px */
+@media (max-width: 900px) {
+  .nav {
+    flex-direction: column;
+    padding: 0;
+  }
+  .navNom {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .navLinks {
+    position: absolute;
+    top: 60px; /* Ajustez selon la hauteur de votre en-tête */
+    left: 0;
+    width: 100%;
+    background-color: rgb(75, 75, 75);
+    flex-direction: column;
+    gap: 0;
+    display: none; /* Masquer par défaut */
+    z-index: 1000; /* Assurez-vous que le menu est au-dessus des autres éléments */
+  }
+  .navLinks.open {
+    display: flex; /* Afficher lorsque ouvert */
+  }
+  .nav-link {
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #575757;
+    width: 100%;
+    color: grey; /* Couleur par défaut des liens dans le menu burger */
+  }
+  .nav-link:hover {
+    color: white !important; /* Assurez-vous que les liens deviennent blancs au survol */
+  }
+  .burger-menu {
+    display: block; /* Afficher le menu burger */
+    position: absolute;
+    right: 20px;
+    top: 20px; /* Ajustez selon vos besoins */
+  }
+}
+/* Conteneur principal */
+.top-accueil {
+  position: relative; /* Position relative pour les éléments positionnés en absolu */
+  height: 100vh; /* Hauteur complète de la vue */
+  width: 100vw; /* Prendre toute la largeur de l'écran */
+  overflow: hidden; /* Assurer que les éléments ne débordent pas */
+}
+
+/* Image de fond */
+.top-accueil img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover; /* Ajuste l'image pour couvrir le conteneur */
+  -o-object-position: center;
+     object-position: center; /* Centre l'image */
+}
+
+/* Conteneur de la présentation */
+.presentation {
+  position: absolute; /* Positionnement absolu par rapport au conteneur parent */
+  top: 20%; /* Ajuster la position par rapport au haut de l'image */
+  left: 50%; /* Centrer horizontalement */
+  transform: translateX(-50%); /* Ajuster pour le centrage parfait */
+  text-align: center; /* Centrer le texte */
+  color: aliceblue;
+  width: 100%;
+  padding: 0 20px; /* Ajouter du padding sur les côtés */
+}
+
+/* Titres */
+.presentation h1 {
+  font-size: 2rem; /* Taille de police relative */
+  margin: 0;
+}
+
+.presentation h2 {
+  font-size: 1.5rem; /* Taille de police relative */
+  margin: 0;
+}
+
+/* Bouton "En savoir plus" */
+.ensavoirplus {
+  padding: 15px 30px; /* Ajuster le padding pour les petits écrans */
+  margin: 20px auto 0;
+  color: white;
+  background: blue;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem; /* Taille de police relative */
+  display: inline-block;
+}
+
+/* Media Queries pour les petits écrans */
+@media (max-width: 768px) {
+  .presentation h1 {
+    font-size: 1.5rem; /* Réduire la taille du titre */
+  }
+  .presentation h2 {
+    font-size: 1.2rem; /* Réduire la taille du sous-titre */
+  }
+  .ensavoirplus {
+    padding: 10px 20px; /* Réduire le padding */
+    font-size: 0.9rem; /* Réduire la taille de police */
+    width: auto; /* Ajuster la largeur du bouton */
+  }
+}
+@media (max-width: 480px) {
+  .presentation h1 {
+    font-size: 1.2rem; /* Réduire encore la taille du titre */
+  }
+  .presentation h2 {
+    font-size: 1rem; /* Réduire encore la taille du sous-titre */
+  }
+  .ensavoirplus {
+    padding: 8px 15px; /* Réduire le padding */
+    font-size: 0.8rem; /* Réduire la taille de police */
+    width: auto; /* Ajuster la largeur du bouton */
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.apropos {
+  background-color: rgb(255, 255, 255);
+  margin: 50px 20px; /* Réduit les marges pour les petits écrans */
+  border-radius: 3px;
+  padding: 30px 20px; /* Réduit le padding pour les petits écrans */
+  box-shadow: 2px 2px 5px rgba(25, 100, 119, 0.555);
+  display: flex;
+  justify-content: space-between; /* Sépare le texte et l'image */
+  flex-wrap: wrap; /* Permet d'ajuster les éléments sur petits écrans */
+}
+
+.apropos > div {
+  flex: 1; /* Les divs prennent la même largeur */
+  margin: 10px;
+}
+
+.apropos h1 {
+  padding: 10px;
+}
+
+.apropos h2 {
+  padding-top: 20px;
+  text-align: left; /* Aligner le texte à gauche */
+}
+
+.apropos hr {
+  width: 100%; /* La ligne horizontale prend toute la largeur */
+  background-color: blue;
+  height: 3px;
+}
+
+.apropos img {
+  border-radius: 20px;
+  width: 100%; /* Rendre l'image responsive */
+  max-width: 400px; /* Limite maximale de la taille de l'image */
+  margin: 0 auto; /* Centrer l'image dans son conteneur */
+}
+
+.apropos section {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  margin-top: 20px; /* Espacement entre l'image et les compétences */
+}
+
+.apropos .container {
+  width: 100%;
+  background-color: #cccccc;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 0; /* Supprime le padding pour éviter tout espace */
+}
+
+.apropos .skills {
+  text-align: right;
+  padding: 10px 0;
+  color: aliceblue;
+  margin: 0; /* Supprime les marges pour éviter tout espace non rempli */
+}
+
+/* Définitions des animations pour les compétences */
+@keyframes animation1 {
+  /* ... */
+}
+@keyframes animation2 {
+  /* ... */
+}
+@keyframes animation3 {
+  /* ... */
+}
+@keyframes animation4 {
+  /* ... */
+}
+@keyframes animation5 {
+  /* ... */
+}
+/* Media queries pour les petits écrans */
+@media (max-width: 768px) {
+  .apropos {
+    flex-direction: column; /* Empile les éléments sur petits écrans */
+    align-items: center; /* Centre les éléments */
+  }
+  .apropos img {
+    max-width: 100%;
+  }
+  .apropos h2 {
+    font-size: 18px;
+    padding-top: 10px;
+  }
+  .apropos p {
+    font-size: 14px;
+  }
+  .apropos section {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .apropos h1 {
+    font-size: 24px;
+  }
+  .apropos h2 {
+    font-size: 16px;
+  }
+  .apropos p {
+    font-size: 12px;
+  }
+}
+@keyframes animation1 {
+  0% {
+    width: 0;
+    margin-left: -50px;
+  }
+  100% {
+    width: 90%;
+  }
+}
+@keyframes animation2 {
+  0% {
+    width: 0;
+    margin-left: -50px;
+  }
+  100% {
+    width: 80%;
+  }
+}
+@keyframes animation3 {
+  0% {
+    width: 0;
+    margin-left: -50px;
+  }
+  100% {
+    width: 70%;
+  }
+}
+@keyframes animation4 {
+  0% {
+    width: 0;
+    margin-left: -50px;
+  }
+  100% {
+    width: 60%;
+  }
+}
+@keyframes animation5 {
+  0% {
+    width: 0;
+    margin-left: -50px;
+  }
+  100% {
+    width: 50%;
+  }
+}
+.skills.html {
+  width: 90%;
+  background-color: red;
+  animation: animation1 3s ease-in-out forwards;
+}
+
+.skills.css {
+  width: 80%;
+  background-color: rgb(26, 174, 194);
+  animation: animation2 3s ease-in-out forwards;
+}
+
+.skills.javascprit {
+  width: 70%;
+  background-color: rgb(236, 240, 6);
+  animation: animation3 3s ease-in-out forwards;
+}
+
+.skills.php {
+  width: 60%;
+  background-color: rgb(2, 117, 46);
+  animation: animation4 3s ease-in-out forwards;
+}
+
+.skills.react {
+  width: 50%;
+  background-color: rgb(40, 98, 224);
+  animation: animation5 3s ease-in-out forwards;
+}
+
+.footer {
+  background-color: rgb(180, 180, 180);
+  border-radius: 3px;
+  padding: 40px 20px; /* Réduit le padding pour les petits écrans */
+  box-shadow: 2px 2px 5px rgba(25, 100, 119, 0.555);
+  display: flex;
+  flex-wrap: wrap; /* Permet aux éléments de se réorganiser sur petits écrans */
+  justify-content: space-between;
+  text-align: left;
+  font-size: 15px;
+}
+
+.footer > div {
+  flex: 1; /* Chaque colonne prend la même largeur */
+  min-width: 200px; /* Assure que les colonnes ne deviennent pas trop petites */
+}
+
+.footer .profil,
+.footer .liens,
+.footer .Rea-liens,
+.footer .Article-liens {
+  display: flex;
+  flex-direction: column; /* Aligne les éléments verticalement */
+  gap: 10px; /* Ajoute un espacement entre les éléments */
+}
+
+.li-link,
+.rea-link,
+.art-link {
+  color: black;
+  text-align: left;
+  font-size: 15px;
+}
+
+.footer p {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.information {
+  font-weight: normal;
+}
+
+.basdepage {
+  background-color: rgb(180, 180, 180);
+  text-align: center;
+}
+
+.DesigBy {
+  background-color: rgb(32, 32, 32);
+  color: #ffffff;
+  font-size: 17px;
+  padding: 10px;
+}
+
+/* Media queries pour rendre le footer responsive */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Empile les éléments verticalement */
+    text-align: center; /* Centre le texte pour les petits écrans */
+  }
+  .footer > div {
+    min-width: 100%; /* Les colonnes prennent toute la largeur */
+  }
+  .footer .profil,
+  .footer .liens,
+  .footer .Rea-liens,
+  .footer .Article-liens {
+    text-align: center; /* Centre le texte dans chaque section */
+  }
+  .li-link,
+  .rea-link,
+  .art-link {
+    text-align: center; /* Centre les liens */
+    display: inline-block; /* Assure que les liens sont centrés correctement */
+    margin: 5px 0; /* Ajoute un espacement vertical entre les liens */
+  }
+  .footer p {
+    font-size: 18px; /* Réduit la taille de la police */
+  }
+  .li-link,
+  .rea-link,
+  .art-link {
+    font-size: 14px; /* Réduit la taille des liens */
+  }
+  .DesigBy {
+    font-size: 15px; /* Réduit la taille de la police dans la section de design */
+  }
+}
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 10px; /* Réduit encore le padding pour les très petits écrans */
+  }
+  .footer p {
+    font-size: 16px; /* Réduit encore la taille de la police */
+  }
+  .li-link,
+  .rea-link,
+  .art-link {
+    font-size: 13px; /* Réduit la taille des liens */
+  }
+}
+.conteneurMentionslegales {
+  background-color: rgb(255, 255, 255);
+  margin: 60px 100px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  height: 750px;
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+}
+
+.button-container {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.btnContainer {
+  position: relative;
+  text-align: left;
+}
+
+button {
+  position: relative;
+  text-align: left;
+  background-color: rgb(255, 255, 255);
+  font-size: 20px;
+  width: 100%;
+  border: 2px solid transparent;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+button:hover {
+  background-color: rgb(230, 230, 255);
+  border-color: rgb(0, 0, 255);
+}
+
+.firstmodal,
+.secondmodal,
+.thirdmodal {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  text-align: left;
+}
+
+.firstmodal ul,
+.secondmodal ul,
+.thirdmodal ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.firstmodal li,
+.secondmodal li,
+.thirdmodal li {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.firstmodal a,
+.secondmodal a,
+.thirdmodal a {
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+  color: blue;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.firstmodal a:hover,
+.secondmodal a:hover,
+.thirdmodal a:hover {
+  color: rgb(181, 197, 202);
+}
+
+/* Conteneur principal */
+.services-container {
+  text-align: center; /* Centrer le texte */
+  margin: 20px; /* Marges autour du conteneur principal */
+}
+
+/* Titre du portfolio */
+.portfolio-title {
+  font-size: 36px; /* Taille de police pour le titre */
+  font-weight: bold; /* Gras pour le titre */
+  color: #333; /* Couleur du titre */
+  margin-bottom: 10px; /* Espacement sous le titre */
+}
+
+/* Sous-titre du portfolio */
+.portfolio-subtitle {
+  font-size: 18px; /* Taille de police pour le sous-titre */
+  color: #666; /* Couleur du sous-titre */
+  margin-bottom: 30px; /* Espacement sous le sous-titre */
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.card-service {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  height: 200px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espace entre le contenu et le bouton */
+  flex-grow: 1;
+}
+
+.card-button {
+  margin-top: 20px; /* Espacement au-dessus du bouton */
+  padding: 10px 20px;
+  background-color: rgb(0, 0, 255);
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+  align-self: center; /* Centrer le bouton horizontalement */
+}
+
+.card-button:hover {
+  background-color: rgb(0, 0, 200);
+}
+
+.card-footer {
+  background-color: #f9f9f9;
+  padding: 10px;
+  text-align: center;
+}
+
+.card-footer-text {
+  font-size: 14px;
+  color: rgb(100, 100, 100);
+}
+
+.card-container-blog1,
+.card-container-blog2 {
+  display: flex; /* Aligner les éléments horizontalement */
+  justify-content: center; /* Centre les cartes horizontalement */
+  gap: 30px; /* Espacement de 30px entre les cartes */
+  flex-wrap: wrap; /* Permet aux cartes de passer à la ligne suivante si nécessaire */
+  margin-top: 20px; /* Espacement au-dessus des conteneurs */
+}
+
+/* Conteneur principal de la page de contact */
+.contact-container {
+  display: flex;
+  justify-content: center; /* Centre le contenu horizontalement */
+  align-items: center; /* Aligne les éléments en haut du conteneur */
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+  max-width: 1200px; /* Limite la largeur du conteneur principal */
+  margin: 0 auto; /* Centre le conteneur principal horizontalement */
+}
+
+/* Section d'en-tête */
+.contact-header {
+  text-align: center; /* Centre le texte */
+  margin-bottom: 20px; /* Espacement sous l'en-tête */
+}
+
+.contact-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-header p {
+  font-size: 1.2rem;
+}
+
+/* Séparateur */
+.contact-divider {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+/* Contenu de contact avec disposition flex */
+.contact-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; /* Permet aux éléments de se réorganiser sur des écrans plus petits */
+}
+
+/* Section d'information de contact */
+.contact-info {
+  flex: 2;
+  max-width: 600px; /* Limite la largeur du formulaire de contact */
+  text-align: center;
+}
+
+/* Détails de contact à droite */
+.contact-details {
+  flex: 1;
+  max-width: 600px; /* Limite la largeur des coordonnées */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center; /* Centre le texte dans les coordonnées */
+  margin: 0 auto; /* Centre horizontalement dans son conteneur */
+}
+
+/* Informations de contact */
+.contact-address {
+  text-align: center;
+}
+
+.contact-address h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.contact-address p {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+/* Carte Google Maps */
+.contact-map iframe {
+  border: 0;
+  width: 450px;
+  height: 450px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Formulaire de contact */
+.contact-form {
+  width: 100%;
+  max-width: 700px; /* Limite la largeur du formulaire */
+  margin: 0 auto; /* Centre le formulaire horizontalement */
+}
+
+.contact-form h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.form-group textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.submit-button {
+  background-color: rgb(0, 0, 255);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+.submit-button:hover {
+  background-color: rgb(0, 0, 200);
+}
+
+/* Centrage de la carte */
+.containerportfolio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Prendre toute la hauteur de la fenêtre */
+}
+
+/* Style de la carte */
+.cardportfolio {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 700px;
+  text-align: center;
+}
+
+/* Style pour l'image de profil */
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 4px solid #ddd;
+}
+
+/* Style pour le nom d'utilisateur */
+.cardportfolio h1 {
+  font-size: 24px;
+  margin: 10px 0;
+  color: #333;
+}
+
+/* Style des paragraphes */
+.cardportfolio p {
+  color: #555;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+/* Lien vers le profil GitHub */
+.cardportfolio a {
+  color: #0073e6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cardportfolio a:hover {
+  text-decoration: underline;
+}
+
+/* Style pour le chargement et les erreurs */
+.loading,
+.error {
+  text-align: center;
+  font-size: 20px;
+  color: #666;
+}/*# sourceMappingURL=style.css.map */

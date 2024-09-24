@@ -1,0 +1,194 @@
+.apropos {
+  background-color: rgb(255, 255, 255);
+  margin: 50px 20px; /* Réduit les marges pour les petits écrans */
+  border-radius: 3px;
+  padding: 30px 20px; /* Réduit le padding pour les petits écrans */
+  box-shadow: 2px 2px 5px rgba(25, 100, 119, 0.555);
+  display: flex;
+  justify-content: space-between; /* Sépare le texte et l'image */
+  flex-wrap: wrap; /* Permet d'ajuster les éléments sur petits écrans */
+}
+
+.apropos > div {
+  flex: 1; /* Les divs prennent la même largeur */
+  margin: 10px;
+}
+
+.apropos h1 {
+  padding: 10px;
+}
+
+.apropos h2 {
+  padding-top: 20px;
+  text-align: left; /* Aligner le texte à gauche */
+}
+
+.apropos hr {
+  width: 100%; /* La ligne horizontale prend toute la largeur */
+  background-color: blue;
+  height: 3px;
+}
+
+.apropos img {
+  border-radius: 20px;
+  width: 100%; /* Rendre l'image responsive */
+  max-width: 400px; /* Limite maximale de la taille de l'image */
+  margin: 0 auto; /* Centrer l'image dans son conteneur */
+}
+
+.apropos section {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  margin-top: 20px; /* Espacement entre l'image et les compétences */
+}
+
+.apropos .container {
+  width: 100%;
+  background-color: #cccccc;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 0; /* Supprime le padding pour éviter tout espace */
+}
+
+.apropos .skills {
+  text-align: right;
+  padding: 10px 0;
+  color: aliceblue;
+  margin: 0; /* Supprime les marges pour éviter tout espace non rempli */
+}
+
+/* Définitions des animations pour les compétences */
+@keyframes animation1 {
+  /* ... */
+}
+@keyframes animation2 {
+  /* ... */
+}
+@keyframes animation3 {
+  /* ... */
+}
+@keyframes animation4 {
+  /* ... */
+}
+@keyframes animation5 {
+  /* ... */
+}
+
+/* Media queries pour les petits écrans */
+@media (max-width: 768px) {
+  .apropos {
+    flex-direction: column; /* Empile les éléments sur petits écrans */
+    align-items: center; /* Centre les éléments */
+  }
+
+  .apropos img {
+    max-width: 100%;
+  }
+
+  .apropos h2 {
+    font-size: 18px;
+    padding-top: 10px;
+  }
+
+  .apropos p {
+    font-size: 14px;
+  }
+
+  .apropos section {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .apropos h1 {
+    font-size: 24px;
+  }
+
+  .apropos h2 {
+    font-size: 16px;
+  }
+
+  .apropos p {
+    font-size: 12px;
+  }
+}
+
+@keyframes animation1 {
+  0% {
+    width: 0;
+    margin-left: -50px;
+  }
+  100% {
+    width: 90%;
+  }
+}
+
+@keyframes animation2 {
+  0% {
+    width: 0;
+    margin-left: -50px;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+@keyframes animation3 {
+  0% {
+    width: 0;
+    margin-left: -50px;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
+@keyframes animation4 {
+  0% {
+    width: 0;
+    margin-left: -50px;
+  }
+  100% {
+    width: 60%;
+  }
+}
+
+@keyframes animation5 {
+  0% {
+    width: 0;
+    margin-left: -50px;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+.skills.html {
+  width: 90%;
+  background-color: red;
+  animation: animation1 3s ease-in-out forwards;
+}
+
+.skills.css {
+  width: 80%;
+  background-color: rgb(26, 174, 194);
+  animation: animation2 3s ease-in-out forwards;
+}
+
+.skills.javascprit {
+  width: 70%;
+  background-color: rgb(236, 240, 6);
+  animation: animation3 3s ease-in-out forwards;
+}
+
+.skills.php {
+  width: 60%;
+  background-color: rgb(2, 117, 46);
+  animation: animation4 3s ease-in-out forwards;
+}
+
+.skills.react {
+  width: 50%;
+  background-color: rgb(40, 98, 224);
+  animation: animation5 3s ease-in-out forwards;
+}
