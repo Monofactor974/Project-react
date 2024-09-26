@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(255, 0, 0);
+  background-color: rgb(75, 75, 75);
   height: 10vh;
   padding: 0 20px;
   position: relative;
@@ -21,6 +21,8 @@ a {
   color: white;
   margin: 0;
   margin-left: 20px;
+  text-decoration: none;
+  color: white;
 }
 
 .navLinks {
@@ -30,25 +32,22 @@ a {
   font-size: 24px;
 }
 
-/* Style des liens de navigation */
 .nav-link {
-  text-decoration: none; /* Enlever la décoration par défaut des liens */
-  color: grey; /* Couleur des liens par défaut */
-  padding: 10px; /* Espacement interne */
-  transition: color 0.3s ease; /* Transition pour un effet de survol fluide */
-  display: block; /* Assurez-vous que les liens prennent toute la largeur disponible */
+  text-decoration: none;
+  color: grey;
+  padding: 10px;
+  transition: color 0.3s ease;
+  display: block;
 }
 
-/* État des liens après avoir été visités ou par défaut */
 .nav-link:visited,
 .nav-link:link {
-  color: grey; /* S'assurer que les liens sont gris, même après avoir été visités */
+  color: grey;
 }
 
-/* Assurez-vous que le lien devient blanc au survol */
 .nav-link:hover {
-  color: white !important; /* Forcer la couleur blanche au survol */
-  background-color: transparent !important; /* Assurer qu'il n'y a pas de fond */
+  color: white !important;
+  background-color: transparent !important;
 }
 
 /* Menu burger caché par défaut */
@@ -57,7 +56,6 @@ a {
   cursor: pointer;
 }
 
-/* Media Query pour les écrans sous 900px */
 @media (max-width: 900px) {
   .nav {
     flex-direction: column;
@@ -840,4 +838,52 @@ button:hover {
   text-align: center;
   font-size: 20px;
   color: #666;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px;
+}
+.card-container .card-service-realisation {
+  flex: 1 1 calc(30% - 20px);
+  margin: 10px;
+  min-width: 250px;
+}
+.card-container .card-service-realisation .card-realisation {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  height: 20rem;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.card-container .card-service-realisation .card-realisation:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.card-container .card-service-realisation .card-realisation .card-img-realisation {
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 24px;
+  height: 24px;
+}
+.card-container .card-service-realisation .card-realisation .card-body-realisation {
+  margin-top: 20px;
+  text-align: center;
+}
+.card-container .card-service-realisation .card-realisation .card-body-realisation h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.card-container .card-service-realisation .card-realisation .card-body-realisation .card-text-realisation {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+.card-container .card-service-realisation .card-realisation .card-footer-realisation {
+  margin-top: 15px;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

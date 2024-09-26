@@ -8,6 +8,7 @@ export default function Nav() {
   const Links = [
     { name: "Accueil", href: "/" },
     { name: "Services", href: "/Services" },
+    { name: "Realisation", href: "/Realisation" },
     { name: "Blog", href: "/Blog" },
     { name: "Me contacter", href: "/Contact" },
   ];
@@ -19,7 +20,10 @@ export default function Nav() {
 
   return (
     <div className="nav">
-      <h1 className="navNom">JOHN DOE</h1>
+      <NavLink to="/" className="navNom">
+        JOHN DOE
+      </NavLink>
+
       <div className={`navLinks ${isOpen ? "open" : ""}`}>
         {Links.map((link, i) => (
           <NavLink

@@ -20,6 +20,8 @@ a {
   color: white;
   margin: 0;
   margin-left: 20px;
+  text-decoration: none;
+  color: white;
 }
 
 .navLinks {
@@ -29,25 +31,22 @@ a {
   font-size: 24px;
 }
 
-/* Style des liens de navigation */
 .nav-link {
-  text-decoration: none; /* Enlever la décoration par défaut des liens */
-  color: grey; /* Couleur des liens par défaut */
-  padding: 10px; /* Espacement interne */
-  transition: color 0.3s ease; /* Transition pour un effet de survol fluide */
-  display: block; /* Assurez-vous que les liens prennent toute la largeur disponible */
+  text-decoration: none;
+  color: grey;
+  padding: 10px;
+  transition: color 0.3s ease;
+  display: block;
 }
 
-/* État des liens après avoir été visités ou par défaut */
 .nav-link:visited,
 .nav-link:link {
-  color: grey; /* S'assurer que les liens sont gris, même après avoir été visités */
+  color: grey;
 }
 
-/* Assurez-vous que le lien devient blanc au survol */
 .nav-link:hover {
-  color: white !important; /* Forcer la couleur blanche au survol */
-  background-color: transparent !important; /* Assurer qu'il n'y a pas de fond */
+  color: white !important;
+  background-color: transparent !important;
 }
 
 /* Menu burger caché par défaut */
@@ -56,7 +55,6 @@ a {
   cursor: pointer;
 }
 
-/* Media Query pour les écrans sous 900px */
 @media (max-width: 900px) {
   .nav {
     flex-direction: column;
