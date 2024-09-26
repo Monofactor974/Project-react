@@ -3,50 +3,58 @@
   margin: 50px 20px; /* Réduit les marges pour les petits écrans */
   border-radius: 3px;
   padding: 30px 20px; /* Réduit le padding pour les petits écrans */
-  box-shadow: 2px 2px 5px rgba(25, 100, 119, 0.555);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.555);
   display: flex;
   justify-content: space-between; /* Sépare le texte et l'image */
   flex-wrap: wrap; /* Permet d'ajuster les éléments sur petits écrans */
+  > div {
+    flex: 1; /* Les divs prennent la même largeur */
+    margin: 10px; /* Marges pour espacer les éléments */
+  }
+  h1 {
+    padding: 10px;
+    font-size: 28px; /* Taille du titre principal */
+  }
+  h2 {
+    padding-top: 20px;
+    text-align: left; /* Aligner le texte à gauche */
+    font-size: 30px; /* Taille des sous-titres */
+    color: #333; /* Couleur du texte */
+    line-height: 1.6; /* Augmente l'interligne pour une meilleure lisibilité */
+  }
+  h3 {
+    padding-top: 20px;
+    text-align: left; /* Aligner le texte à gauche */
+    font-size: 22px; /* Taille des sous-titres */
+    color: #333; /* Couleur du texte */
+    line-height: 1.6; /* Augmente l'interligne pour une meilleure lisibilité */
+  }
+
+  hr {
+    width: 100%; /* La ligne horizontale prend toute la largeur */
+    background-color: rgb(7, 7, 170); /* Couleur de la ligne */
+    height: 3px; /* Hauteur de la ligne */
+  }
+
+  img {
+    border-radius: 5px;
+    width: 100%; /* Rendre l'image responsive */
+    max-width: 100%; /* Limite maximale de la taille de l'image */
+    max-height: "400px";
+    margin: 20px auto; /* Centre l'image dans son conteneur */
+  }
+  section {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    margin-top: 20px; /* Espacement entre l'image et les compétences */
+  }
 }
 
-.apropos > div {
-  flex: 1; /* Les divs prennent la même largeur */
-  margin: 10px;
-}
-
-.apropos h1 {
-  padding: 10px;
-}
-
-.apropos h2 {
-  padding-top: 20px;
-  text-align: left; /* Aligner le texte à gauche */
-}
-
-.apropos hr {
-  width: 100%; /* La ligne horizontale prend toute la largeur */
-  background-color: blue;
-  height: 3px;
-}
-
-.apropos img {
-  border-radius: 20px;
-  width: 100%; /* Rendre l'image responsive */
-  max-width: 400px; /* Limite maximale de la taille de l'image */
-  margin: 0 auto; /* Centrer l'image dans son conteneur */
-}
-
-.apropos section {
+.apropos .containerSkill {
   width: 100%;
-  background-color: rgb(255, 255, 255);
-  margin-top: 20px; /* Espacement entre l'image et les compétences */
-}
-
-.apropos .container {
-  width: 100%;
-  background-color: #cccccc;
-  border-radius: 20px;
-  overflow: hidden;
+  background-color: #cccccc; /* Couleur du conteneur de la barre de skills */
+  border-radius: 20px; /* Ajoutez le border-radius ici */
+  overflow: hidden; /* Assurez-vous que le débordement est masqué */
   padding: 0; /* Supprime le padding pour éviter tout espace */
 }
 
@@ -55,6 +63,13 @@
   padding: 10px 0;
   color: aliceblue;
   margin: 0; /* Supprime les marges pour éviter tout espace non rempli */
+  border-radius: 20px; /* Ajoutez le border-radius ici aussi, si souhaité */
+  height: 100%; /* Assurez-vous que la barre prend la hauteur complète du conteneur */
+}
+
+/* Vous pouvez également définir la hauteur de la barre de skills pour la rendre plus visible */
+.skills {
+  height: 20px; /* Ajustez la hauteur selon vos préférences */
 }
 
 /* Définitions des animations pour les compétences */

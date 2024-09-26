@@ -6,7 +6,7 @@ const GitHubUser = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const url = "https://api.github.com/users/github-john-doe";
+    const url = "https://api.github.com/users/github-john-doe"; // Remplacez par un utilisateur GitHub valide
 
     fetch(url)
       .then((response) => {
@@ -45,7 +45,7 @@ const GitHubUser = () => {
           <strong>ID :</strong> {userData.id}
         </p>
         <p>
-          <strong>Biographie :</strong> {userData.bio}
+          <strong>Biographie :</strong> {userData.bio || "Aucune biographie"}
         </p>
         <p>
           <strong>URL :</strong>

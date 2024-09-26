@@ -189,50 +189,56 @@ a {
   margin: 50px 20px; /* Réduit les marges pour les petits écrans */
   border-radius: 3px;
   padding: 30px 20px; /* Réduit le padding pour les petits écrans */
-  box-shadow: 2px 2px 5px rgba(25, 100, 119, 0.555);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.555);
   display: flex;
   justify-content: space-between; /* Sépare le texte et l'image */
   flex-wrap: wrap; /* Permet d'ajuster les éléments sur petits écrans */
 }
-
 .apropos > div {
   flex: 1; /* Les divs prennent la même largeur */
-  margin: 10px;
+  margin: 10px; /* Marges pour espacer les éléments */
 }
-
 .apropos h1 {
   padding: 10px;
+  font-size: 28px; /* Taille du titre principal */
 }
-
 .apropos h2 {
   padding-top: 20px;
   text-align: left; /* Aligner le texte à gauche */
+  font-size: 30px; /* Taille des sous-titres */
+  color: #333; /* Couleur du texte */
+  line-height: 1.6; /* Augmente l'interligne pour une meilleure lisibilité */
 }
-
+.apropos h3 {
+  padding-top: 20px;
+  text-align: left; /* Aligner le texte à gauche */
+  font-size: 22px; /* Taille des sous-titres */
+  color: #333; /* Couleur du texte */
+  line-height: 1.6; /* Augmente l'interligne pour une meilleure lisibilité */
+}
 .apropos hr {
   width: 100%; /* La ligne horizontale prend toute la largeur */
-  background-color: blue;
-  height: 3px;
+  background-color: rgb(7, 7, 170); /* Couleur de la ligne */
+  height: 3px; /* Hauteur de la ligne */
 }
-
 .apropos img {
-  border-radius: 20px;
+  border-radius: 5px;
   width: 100%; /* Rendre l'image responsive */
-  max-width: 400px; /* Limite maximale de la taille de l'image */
-  margin: 0 auto; /* Centrer l'image dans son conteneur */
+  max-width: 100%; /* Limite maximale de la taille de l'image */
+  max-height: "400px";
+  margin: 20px auto; /* Centre l'image dans son conteneur */
 }
-
 .apropos section {
   width: 100%;
   background-color: rgb(255, 255, 255);
   margin-top: 20px; /* Espacement entre l'image et les compétences */
 }
 
-.apropos .container {
+.apropos .containerSkill {
   width: 100%;
-  background-color: #cccccc;
-  border-radius: 20px;
-  overflow: hidden;
+  background-color: #cccccc; /* Couleur du conteneur de la barre de skills */
+  border-radius: 20px; /* Ajoutez le border-radius ici */
+  overflow: hidden; /* Assurez-vous que le débordement est masqué */
   padding: 0; /* Supprime le padding pour éviter tout espace */
 }
 
@@ -241,6 +247,13 @@ a {
   padding: 10px 0;
   color: aliceblue;
   margin: 0; /* Supprime les marges pour éviter tout espace non rempli */
+  border-radius: 20px; /* Ajoutez le border-radius ici aussi, si souhaité */
+  height: 100%; /* Assurez-vous que la barre prend la hauteur complète du conteneur */
+}
+
+/* Vous pouvez également définir la hauteur de la barre de skills pour la rendre plus visible */
+.skills {
+  height: 20px; /* Ajustez la hauteur selon vos préférences */
 }
 
 /* Définitions des animations pour les compétences */
@@ -366,20 +379,21 @@ a {
 }
 
 .footer {
-  background-color: rgb(180, 180, 180);
+  background-color: #eee;
   border-radius: 3px;
-  padding: 40px 20px; /* Réduit le padding pour les petits écrans */
+  padding: 40px 120px;
   box-shadow: 2px 2px 5px rgba(25, 100, 119, 0.555);
   display: flex;
-  flex-wrap: wrap; /* Permet aux éléments de se réorganiser sur petits écrans */
+  flex-wrap: wrap;
   justify-content: space-between;
   text-align: left;
   font-size: 15px;
 }
 
 .footer > div {
-  flex: 1; /* Chaque colonne prend la même largeur */
-  min-width: 200px; /* Assure que les colonnes ne deviennent pas trop petites */
+  flex: 1;
+  min-width: 200px;
+  margin-left: 30px;
 }
 
 .footer .profil,
@@ -387,8 +401,8 @@ a {
 .footer .Rea-liens,
 .footer .Article-liens {
   display: flex;
-  flex-direction: column; /* Aligne les éléments verticalement */
-  gap: 10px; /* Ajoute un espacement entre les éléments */
+  flex-direction: column;
+  gap: 10px;
 }
 
 .li-link,
@@ -397,6 +411,7 @@ a {
   color: black;
   text-align: left;
   font-size: 15px;
+  text-decoration: none;
 }
 
 .footer p {
@@ -409,68 +424,110 @@ a {
 }
 
 .basdepage {
-  background-color: rgb(180, 180, 180);
+  background-color: #eee;
   text-align: center;
 }
 
 .DesigBy {
-  background-color: rgb(32, 32, 32);
+  background-color: #000000;
   color: #ffffff;
   font-size: 17px;
   padding: 10px;
 }
 
+/* Ajout de ">" devant chaque lien */
+.li-link::before,
+.rea-link::before,
+.art-link::before {
+  content: "> "; /* Ajoute le symbole > avant le texte du lien */
+  color: blue; /* Met le symbole en bleu */
+  font-weight: bold; /* Donne du poids au symbole */
+}
+
 /* Media queries pour rendre le footer responsive */
 @media (max-width: 768px) {
   .footer {
-    flex-direction: column; /* Empile les éléments verticalement */
-    text-align: center; /* Centre le texte pour les petits écrans */
+    background-color: #eee;
+    border-radius: 3px;
+    padding: 100px 20px;
+    box-shadow: 2px 2px 5px rgba(25, 100, 119, 0.555);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: left;
+    font-size: 15px;
   }
   .footer > div {
-    min-width: 100%; /* Les colonnes prennent toute la largeur */
+    flex: 1;
+    min-width: 200px;
+    margin-left: 30px;
   }
   .footer .profil,
   .footer .liens,
   .footer .Rea-liens,
   .footer .Article-liens {
-    text-align: center; /* Centre le texte dans chaque section */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
   .li-link,
   .rea-link,
   .art-link {
-    text-align: center; /* Centre les liens */
-    display: inline-block; /* Assure que les liens sont centrés correctement */
-    margin: 5px 0; /* Ajoute un espacement vertical entre les liens */
+    text-align: center;
+    display: inline-block;
+    margin: 5px 0;
   }
   .footer p {
-    font-size: 18px; /* Réduit la taille de la police */
+    font-size: 18px;
   }
   .li-link,
   .rea-link,
   .art-link {
-    font-size: 14px; /* Réduit la taille des liens */
+    font-size: 14px;
   }
   .DesigBy {
-    font-size: 15px; /* Réduit la taille de la police dans la section de design */
+    font-size: 15px;
   }
 }
 @media (max-width: 480px) {
   .footer {
-    padding: 20px 10px; /* Réduit encore le padding pour les très petits écrans */
+    padding: 20px 10px;
   }
   .footer p {
-    font-size: 16px; /* Réduit encore la taille de la police */
+    font-size: 16px;
   }
   .li-link,
   .rea-link,
   .art-link {
-    font-size: 13px; /* Réduit la taille des liens */
+    font-size: 13px;
   }
 }
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-links img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
+}
+
+.information {
+  margin-bottom: 10px;
+}
+
 .conteneurMentionslegales {
   background-color: rgb(255, 255, 255);
   margin: 60px 100px;
-  border-radius: 3px;
+  border-radius: 5px; /* Bord arrondi du conteneur */
   display: flex;
   flex-direction: column;
   height: 750px;
@@ -483,30 +540,45 @@ h1 {
 }
 
 .button-container {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   text-align: left;
+  border-radius: 20%; /* Arrondi des coins */
 }
 
 .btnContainer {
   position: relative;
+  display: inline-block; /* Pour les aligner côte à côte */
+  padding: 0px 0px; /* Ajuste le padding selon tes besoins */
+  border: none; /* Ajustement de la bordure */
+  border-radius: 5px; /* Arrondi des coins */
   text-align: left;
+  border-radius: 20%; /* Arrondi des coins */
 }
 
 button {
   position: relative;
-  text-align: left;
+  text-align: center; /* Centrer le texte dans le bouton */
   background-color: rgb(255, 255, 255);
-  font-size: 20px;
-  width: 100%;
-  border: 2px solid transparent;
-  padding: 10px;
+  font-size: 30px;
   cursor: pointer;
-  transition: background-color 0.3s, border-color 0.3s;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  border: 1px solid rgb(173, 173, 173); /* Ajustement de la bordure */
+  border-radius: 20%; /* Arrondi des coins */
+  width: 1700px;
+  text-align: left;
+  color: black; /* Couleur du texte par défaut */
 }
 
+/* Changer la couleur du texte et la bordure au survol */
 button:hover {
   background-color: rgb(230, 230, 255);
-  border-color: rgb(0, 0, 255);
+  border-color: #0d6efd;
+  color: #0d6efd; /* Couleur du texte en bleu au survol */
+}
+
+/* Supprimer la marge à droite du dernier bouton */
+.button-container:last-child button {
+  margin-right: 0;
 }
 
 .firstmodal,
@@ -539,14 +611,69 @@ button:hover {
   text-decoration: none;
   display: block;
   padding: 5px 0;
-  color: blue;
-  text-decoration: none;
+  color: inherit; /* Prendre la couleur héritée pour les liens */
   transition: color 0.3s;
 }
+
 .firstmodal a:hover,
 .secondmodal a:hover,
 .thirdmodal a:hover {
-  color: rgb(181, 197, 202);
+  color: rgb(181, 197, 202); /* Couleur au survol (gris clair) */
+}
+
+/* Cible uniquement les liens d'adresse physique */
+.firstmodal a[href*=maps],
+.secondmodal a[href*=maps],
+.thirdmodal a[href*=maps] {
+  color: black; /* Change la couleur des adresses physiques en noir */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+/* Couleur au survol pour les adresses physiques */
+.firstmodal a[href*=maps]:hover,
+.secondmodal a[href*=maps]:hover,
+.thirdmodal a[href*=maps]:hover {
+  color: rgb(181, 197, 202); /* Couleur gris clair au survol */
+}
+
+/* Laisse les numéros de téléphone et les adresses e-mails en bleu */
+.firstmodal a[href^=tel],
+.secondmodal a[href^=tel],
+.thirdmodal a[href^=tel],
+.firstmodal a[href^=mailto],
+.secondmodal a[href^=mailto],
+.thirdmodal a[href^=mailto] {
+  color: #0d6efd; /* Bleu pour numéros de téléphone et emails */
+}
+
+/* Optionnel : Couleur au survol pour les numéros de téléphone et e-mails */
+.firstmodal a[href^=tel]:hover,
+.secondmodal a[href^=tel]:hover,
+.thirdmodal a[href^=tel]:hover,
+.firstmodal a[href^=mailto]:hover,
+.secondmodal a[href^=mailto]:hover,
+.thirdmodal a[href^=mailto]:hover {
+  color: rgb(181, 197, 202); /* Couleur gris clair au survol */
+}
+
+.thirdmodal a.pixabay {
+  color: #0d6efd; /* Bleu pour le lien Pixabay */
+}
+
+/* Optionnel : Couleur au survol pour le lien Pixabay */
+.thirdmodal a.pixabay:hover {
+  color: rgb(181, 197, 202); /* Couleur gris clair au survol */
+}
+
+/* Couleur bleue pour le lien Always Data */
+.secondmodal a.alwaysdata {
+  color: #0d6efd; /* Bleu pour le lien Always Data */
+}
+
+/* Optionnel : Couleur au survol pour le lien Always Data */
+.secondmodal a.alwaysdata:hover {
+  color: rgb(181, 197, 202); /* Couleur gris clair au survol */
 }
 
 /* Conteneur principal */
@@ -558,7 +685,6 @@ button:hover {
 /* Titre du portfolio */
 .portfolio-title {
   font-size: 36px; /* Taille de police pour le titre */
-  font-weight: bold; /* Gras pour le titre */
   color: #333; /* Couleur du titre */
   margin-bottom: 10px; /* Espacement sous le titre */
 }
@@ -573,7 +699,7 @@ button:hover {
 .card-container {
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
@@ -590,6 +716,7 @@ button:hover {
   border-radius: 3px;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 40px;
 }
 
 .card:hover {
@@ -612,15 +739,20 @@ button:hover {
   flex-grow: 1;
 }
 
-.card-button {
+.card-button-realisation {
   margin-top: 20px; /* Espacement au-dessus du bouton */
   padding: 10px 20px;
-  background-color: rgb(0, 0, 255);
-  color: white;
-  text-decoration: none;
-  border-radius: 3px;
-  transition: background-color 0.3s;
-  align-self: center; /* Centrer le bouton horizontalement */
+  color: #0d6efd; /* Couleur du texte */
+  text-decoration: none; /* Pas de soulignement */
+  border-radius: 10px; /* Bords arrondis */
+  transition: background-color 0.3s, border-color 0.3s; /* Transition pour le survol */
+  align-self: center; /* Centre le bouton horizontalement */
+  border: 2px solid #0d6efd; /* Bordure de 2px couleur bleue */
+  background-color: none; /* Fond bleu pour le bouton */
+}
+
+.card-button-realisation:hover {
+  background-color: #a5c5f5; /* Changez la couleur de fond au survol */
 }
 
 .card-button:hover {
@@ -628,23 +760,107 @@ button:hover {
 }
 
 .card-footer {
-  background-color: #f9f9f9;
+  background-color: #eee;
   padding: 10px;
   text-align: center;
 }
 
 .card-footer-text {
   font-size: 14px;
-  color: rgb(100, 100, 100);
+  color: #1e1e1e;
 }
 
 .card-container-blog1,
 .card-container-blog2 {
-  display: flex; /* Aligner les éléments horizontalement */
-  justify-content: center; /* Centre les cartes horizontalement */
-  gap: 30px; /* Espacement de 30px entre les cartes */
-  flex-wrap: wrap; /* Permet aux cartes de passer à la ligne suivante si nécessaire */
-  margin-top: 20px; /* Espacement au-dessus des conteneurs */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card-service-blog {
+  display: flex;
+  justify-content: center;
+}
+
+.card-blog {
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ajout de 'ease' pour un effet plus doux */
+  margin-bottom: 40px;
+}
+
+/* Changer .card:hover en .card-blog:hover pour appliquer l'effet sur la bonne classe */
+.card-blog:hover {
+  transform: scale(1.05); /* Agrandir la carte de 5% */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-blog img {
+  height: 200px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card-body-blog {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espace entre le contenu et le bouton */
+  flex-grow: 1;
+}
+
+.card-button-blog {
+  margin-top: auto;
+  padding: 10px 20px;
+  background-color: #0d6efd;
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+  border: 2px solid transparent;
+  align-self: flex-start;
+}
+
+.card-button-blog:hover {
+  background-color: #0056b3;
+}
+
+.card-footer-blog {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.black-link {
+  color: black; /* Change la couleur du texte en noir */
+}
+
+.black-link:hover {
+  text-decoration: underline; /* Ajoute un soulignement au survol si souhaité */
+}
+
+.background-image {
+  width: 100%; /* Prend toute la largeur */
+  height: 150px; /* Ajustez cette valeur selon vos besoins */
+  -o-object-fit: cover;
+     object-fit: cover; /* Garde les proportions et couvre toute la zone */
+  display: block; /* Évite les espaces indésirables */
+  margin: 0; /* Supprime les marges */
+  padding: 0; /* Supprime le padding */
+}
+
+.date-container {
+  background-color: #eee;
+  padding: 5px 10px;
+  margin-top: 10px;
+  text-align: center;
+  flex-shrink: 0; /* Évite que la taille de la date change */
+  height: 40px; /* Assure une hauteur constante pour toutes les dates */
 }
 
 /* Conteneur principal de la page de contact */
@@ -781,11 +997,14 @@ button:hover {
 }
 
 /* Centrage de la carte */
-.containerportfolio {
+.containerfolio {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
   height: 100vh; /* Prendre toute la hauteur de la fenêtre */
+  margin: 0; /* Supprime les marges par défaut */
+  padding: 0; /* Supprime les paddings par défaut */
+  box-sizing: border-box; /* S'assure que les paddings et les bordures sont inclus dans les dimensions */
 }
 
 /* Style de la carte */
@@ -794,7 +1013,8 @@ button:hover {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  max-width: 700px;
+  max-width: 700px; /* Largeur maximale de la carte */
+  width: 100%; /* S'assure que la carte utilise toute la largeur disponible */
   text-align: center;
 }
 
@@ -840,29 +1060,22 @@ button:hover {
   color: #666;
 }
 
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 20px;
-}
-.card-container .card-service-realisation {
-  flex: 1 1 calc(30% - 20px);
-  margin: 10px;
-  min-width: 250px;
-}
-.card-container .card-service-realisation .card-realisation {
+.card-realisation {
   background-color: #fff;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   height: 20rem;
-  transition: box-shadow 0.3s ease-in-out;
+  width: 20rem;
+  margin-bottom: 100px; /* Ajoute de l'espace en bas de chaque carte */
+  overflow: hidden;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* Ajoutez la transition pour transform */
 }
-.card-container .card-service-realisation .card-realisation:hover {
+.card-realisation:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05); /* Agrandir la carte de 5% au survol */
 }
-.card-container .card-service-realisation .card-realisation .card-img-realisation {
+.card-realisation .card-img-realisation {
   margin-top: 20px;
   display: block;
   margin-left: auto;
@@ -870,20 +1083,79 @@ button:hover {
   width: 24px;
   height: 24px;
 }
-.card-container .card-service-realisation .card-realisation .card-body-realisation {
+
+.card-body-realisation {
   margin-top: 20px;
   text-align: center;
 }
-.card-container .card-service-realisation .card-realisation .card-body-realisation h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-.card-container .card-service-realisation .card-realisation .card-body-realisation .card-text-realisation {
+.card-body-realisation .card-text-realisation {
   font-size: 1rem;
   line-height: 1.5;
   color: #333;
 }
-.card-container .card-service-realisation .card-realisation .card-footer-realisation {
+
+.card-footer-realisation {
   margin-top: 15px;
   text-align: center;
+}
+
+.black-link {
+  color: black; /* Change la couleur du texte en noir */
+}
+
+.black-link:hover {
+  text-decoration: underline; /* Ajoute un soulignement au survol si souhaité */
+}
+
+.background-image {
+  width: 100%; /* Prend toute la largeur */
+  height: 150px; /* Ajustez cette valeur selon vos besoins */
+  -o-object-fit: cover;
+     object-fit: cover; /* Garde les proportions et couvre toute la zone */
+  display: block; /* Évite les espaces indésirables */
+  margin: 0; /* Supprime les marges */
+  padding: 0; /* Supprime le padding */
+}
+
+.services-container {
+  text-align: center; /* Centre le texte */
+  margin: 0; /* Supprime les marges autour du conteneur */
+  padding: 0; /* Supprime le padding autour du conteneur */
+  width: 100%; /* Assurez-vous que le conteneur prend toute la largeur */
+}
+
+.portfolio-title {
+  margin-top: 20px; /* Ajustez la valeur selon vos besoins */
+}
+
+.divider {
+  height: 5px; /* Épaisseur de la ligne */
+  background-color: #003366 !important; /* Couleur bleu foncé */
+  margin: 20px auto; /* Centré avec auto */
+  width: 15%; /* Largeur de 10% */
+  border: none; /* Supprime tout bord par défaut */
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  font-weight: 600;
+  font-weight: 600;
+}
+
+p,
+a,
+li,
+span {
+  font-weight: 400;
 }/*# sourceMappingURL=style.css.map */

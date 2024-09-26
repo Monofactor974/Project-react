@@ -1,18 +1,19 @@
 .footer {
-  background-color: rgb(180, 180, 180);
+  background-color: #eee;
   border-radius: 3px;
-  padding: 40px 20px; /* Réduit le padding pour les petits écrans */
+  padding: 40px 120px;
   box-shadow: 2px 2px 5px rgba(25, 100, 119, 0.555);
   display: flex;
-  flex-wrap: wrap; /* Permet aux éléments de se réorganiser sur petits écrans */
+  flex-wrap: wrap;
   justify-content: space-between;
   text-align: left;
   font-size: 15px;
 }
 
 .footer > div {
-  flex: 1; /* Chaque colonne prend la même largeur */
-  min-width: 200px; /* Assure que les colonnes ne deviennent pas trop petites */
+  flex: 1;
+  min-width: 200px;
+  margin-left: 30px;
 }
 
 .footer .profil,
@@ -20,8 +21,8 @@
 .footer .Rea-liens,
 .footer .Article-liens {
   display: flex;
-  flex-direction: column; /* Aligne les éléments verticalement */
-  gap: 10px; /* Ajoute un espacement entre les éléments */
+  flex-direction: column;
+  gap: 10px;
 }
 
 .li-link,
@@ -30,6 +31,7 @@
   color: black;
   text-align: left;
   font-size: 15px;
+  text-decoration: none;
 }
 
 .footer p {
@@ -42,70 +44,112 @@
 }
 
 .basdepage {
-  background-color: rgb(180, 180, 180);
+  background-color: #eee;
   text-align: center;
 }
 
 .DesigBy {
-  background-color: rgb(32, 32, 32);
+  background-color: #000000;
   color: #ffffff;
   font-size: 17px;
   padding: 10px;
 }
 
+/* Ajout de ">" devant chaque lien */
+.li-link::before,
+.rea-link::before,
+.art-link::before {
+  content: "> "; /* Ajoute le symbole > avant le texte du lien */
+  color: blue; /* Met le symbole en bleu */
+  font-weight: bold; /* Donne du poids au symbole */
+}
+
 /* Media queries pour rendre le footer responsive */
 @media (max-width: 768px) {
   .footer {
-    flex-direction: column; /* Empile les éléments verticalement */
-    text-align: center; /* Centre le texte pour les petits écrans */
+    background-color: #eee;
+    border-radius: 3px;
+    padding: 100px 20px;
+    box-shadow: 2px 2px 5px rgba(25, 100, 119, 0.555);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: left;
+    font-size: 15px;
   }
 
   .footer > div {
-    min-width: 100%; /* Les colonnes prennent toute la largeur */
+    flex: 1;
+    min-width: 200px;
+    margin-left: 30px;
   }
 
   .footer .profil,
   .footer .liens,
   .footer .Rea-liens,
   .footer .Article-liens {
-    text-align: center; /* Centre le texte dans chaque section */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .li-link,
   .rea-link,
   .art-link {
-    text-align: center; /* Centre les liens */
-    display: inline-block; /* Assure que les liens sont centrés correctement */
-    margin: 5px 0; /* Ajoute un espacement vertical entre les liens */
+    text-align: center;
+    display: inline-block;
+    margin: 5px 0;
   }
 
   .footer p {
-    font-size: 18px; /* Réduit la taille de la police */
+    font-size: 18px;
   }
 
   .li-link,
   .rea-link,
   .art-link {
-    font-size: 14px; /* Réduit la taille des liens */
+    font-size: 14px;
   }
 
   .DesigBy {
-    font-size: 15px; /* Réduit la taille de la police dans la section de design */
+    font-size: 15px;
   }
 }
 
 @media (max-width: 480px) {
   .footer {
-    padding: 20px 10px; /* Réduit encore le padding pour les très petits écrans */
+    padding: 20px 10px;
   }
 
   .footer p {
-    font-size: 16px; /* Réduit encore la taille de la police */
+    font-size: 16px;
   }
 
   .li-link,
   .rea-link,
   .art-link {
-    font-size: 13px; /* Réduit la taille des liens */
+    font-size: 13px;
   }
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-links img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
+}
+
+.information {
+  margin-bottom: 10px;
 }

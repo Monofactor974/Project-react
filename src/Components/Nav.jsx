@@ -7,8 +7,9 @@ export default function Nav() {
 
   const Links = [
     { name: "Accueil", href: "/" },
-    { name: "Services", href: "/Services" },
-    { name: "Realisation", href: "/Realisation" },
+    { name: "Services", href: "/Realisation" },
+    { name: "Realisation", href: "/Services" },
+
     { name: "Blog", href: "/Blog" },
     { name: "Me contacter", href: "/Contact" },
   ];

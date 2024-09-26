@@ -8,6 +8,7 @@ export default function MentionLegales() {
   return (
     <div>
       <h1>MENTIONS LÉGALES</h1>
+      <hr className="divider" />
       <div className="conteneurMentionslegales">
         <div className="button-container">
           <Btn
@@ -83,6 +84,14 @@ function ModalSecond() {
             rel="noopener noreferrer"
           >
             91 Rue du Faubourg <br /> 75008 Paris
+          </a>
+          <a
+            className="alwaysdata" // Classe pour le lien
+            href="https://www.alwaysdata.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            www.alwaysdata.com
           </a>
         </li>
       </ul>

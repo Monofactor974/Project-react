@@ -1,9 +1,12 @@
 /* Centrage de la carte */
-.containerportfolio {
+.containerfolio {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
   height: 100vh; /* Prendre toute la hauteur de la fenêtre */
+  margin: 0; /* Supprime les marges par défaut */
+  padding: 0; /* Supprime les paddings par défaut */
+  box-sizing: border-box; /* S'assure que les paddings et les bordures sont inclus dans les dimensions */
 }
 
 /* Style de la carte */
@@ -12,7 +15,8 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  max-width: 700px;
+  max-width: 700px; /* Largeur maximale de la carte */
+  width: 100%; /* S'assure que la carte utilise toute la largeur disponible */
   text-align: center;
 }
 

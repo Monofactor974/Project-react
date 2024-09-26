@@ -1,7 +1,7 @@
 .conteneurMentionslegales {
   background-color: rgb(255, 255, 255);
   margin: 60px 100px;
-  border-radius: 3px;
+  border-radius: 5px; /* Bord arrondi du conteneur */
   display: flex;
   flex-direction: column;
   height: 750px;
@@ -14,30 +14,45 @@ h1 {
 }
 
 .button-container {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   text-align: left;
+  border-radius: 20%; /* Arrondi des coins */
 }
 
 .btnContainer {
   position: relative;
+  display: inline-block; /* Pour les aligner côte à côte */
+  padding: 0px 0px; /* Ajuste le padding selon tes besoins */
+  border: none; /* Ajustement de la bordure */
+  border-radius: 5px; /* Arrondi des coins */
   text-align: left;
+  border-radius: 20%; /* Arrondi des coins */
 }
 
 button {
   position: relative;
-  text-align: left;
+  text-align: center; /* Centrer le texte dans le bouton */
   background-color: rgb(255, 255, 255);
-  font-size: 20px;
-  width: 100%;
-  border: 2px solid transparent;
-  padding: 10px;
+  font-size: 30px;
   cursor: pointer;
-  transition: background-color 0.3s, border-color 0.3s;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  border: 1px solid rgb(173, 173, 173); /* Ajustement de la bordure */
+  border-radius: 20%; /* Arrondi des coins */
+  width: 1700px;
+  text-align: left;
+  color: black; /* Couleur du texte par défaut */
 }
 
+/* Changer la couleur du texte et la bordure au survol */
 button:hover {
   background-color: rgb(230, 230, 255);
-  border-color: rgb(0, 0, 255);
+  border-color: #0d6efd;
+  color: #0d6efd; /* Couleur du texte en bleu au survol */
+}
+
+/* Supprimer la marge à droite du dernier bouton */
+.button-container:last-child button {
+  margin-right: 0;
 }
 
 .firstmodal,
@@ -70,10 +85,64 @@ button:hover {
   text-decoration: none;
   display: block;
   padding: 5px 0;
-  color: blue;
+  color: inherit; /* Prendre la couleur héritée pour les liens */
+  transition: color 0.3s;
+}
+.firstmodal a:hover,
+.secondmodal a:hover,
+.thirdmodal a:hover {
+  color: rgb(181, 197, 202); /* Couleur au survol (gris clair) */
+}
+/* Cible uniquement les liens d'adresse physique */
+.firstmodal a[href*="maps"],
+.secondmodal a[href*="maps"],
+.thirdmodal a[href*="maps"] {
+  color: black; /* Change la couleur des adresses physiques en noir */
   text-decoration: none;
   transition: color 0.3s;
-  &:hover {
-    color: rgb(181, 197, 202);
-  }
+}
+
+/* Couleur au survol pour les adresses physiques */
+.firstmodal a[href*="maps"]:hover,
+.secondmodal a[href*="maps"]:hover,
+.thirdmodal a[href*="maps"]:hover {
+  color: rgb(181, 197, 202); /* Couleur gris clair au survol */
+}
+
+/* Laisse les numéros de téléphone et les adresses e-mails en bleu */
+.firstmodal a[href^="tel"],
+.secondmodal a[href^="tel"],
+.thirdmodal a[href^="tel"],
+.firstmodal a[href^="mailto"],
+.secondmodal a[href^="mailto"],
+.thirdmodal a[href^="mailto"] {
+  color: #0d6efd; /* Bleu pour numéros de téléphone et emails */
+}
+
+/* Optionnel : Couleur au survol pour les numéros de téléphone et e-mails */
+.firstmodal a[href^="tel"]:hover,
+.secondmodal a[href^="tel"]:hover,
+.thirdmodal a[href^="tel"]:hover,
+.firstmodal a[href^="mailto"]:hover,
+.secondmodal a[href^="mailto"]:hover,
+.thirdmodal a[href^="mailto"]:hover {
+  color: rgb(181, 197, 202); /* Couleur gris clair au survol */
+}
+.thirdmodal a.pixabay {
+  color: #0d6efd; /* Bleu pour le lien Pixabay */
+}
+
+/* Optionnel : Couleur au survol pour le lien Pixabay */
+.thirdmodal a.pixabay:hover {
+  color: rgb(181, 197, 202); /* Couleur gris clair au survol */
+}
+
+/* Couleur bleue pour le lien Always Data */
+.secondmodal a.alwaysdata {
+  color: #0d6efd; /* Bleu pour le lien Always Data */
+}
+
+/* Optionnel : Couleur au survol pour le lien Always Data */
+.secondmodal a.alwaysdata:hover {
+  color: rgb(181, 197, 202); /* Couleur gris clair au survol */
 }

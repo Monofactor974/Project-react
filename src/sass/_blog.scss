@@ -1,8 +1,90 @@
 .card-container-blog1,
 .card-container-blog2 {
-  display: flex; /* Aligner les éléments horizontalement */
-  justify-content: center; /* Centre les cartes horizontalement */
-  gap: 30px; /* Espacement de 30px entre les cartes */
-  flex-wrap: wrap; /* Permet aux cartes de passer à la ligne suivante si nécessaire */
-  margin-top: 20px; /* Espacement au-dessus des conteneurs */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card-service-blog {
+  display: flex;
+  justify-content: center;
+}
+
+.card-blog {
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ajout de 'ease' pour un effet plus doux */
+  margin-bottom: 40px;
+}
+
+/* Changer .card:hover en .card-blog:hover pour appliquer l'effet sur la bonne classe */
+.card-blog:hover {
+  transform: scale(1.05); /* Agrandir la carte de 5% */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-blog img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-body-blog {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espace entre le contenu et le bouton */
+  flex-grow: 1;
+}
+
+.card-button-blog {
+  margin-top: auto;
+  padding: 10px 20px;
+  background-color: #0d6efd;
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+  border: 2px solid transparent;
+  align-self: flex-start;
+}
+
+.card-button-blog:hover {
+  background-color: #0056b3;
+}
+
+.card-footer-blog {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.black-link {
+  color: black; /* Change la couleur du texte en noir */
+}
+
+.black-link:hover {
+  text-decoration: underline; /* Ajoute un soulignement au survol si souhaité */
+}
+
+.background-image {
+  width: 100%; /* Prend toute la largeur */
+  height: 150px; /* Ajustez cette valeur selon vos besoins */
+  object-fit: cover; /* Garde les proportions et couvre toute la zone */
+  display: block; /* Évite les espaces indésirables */
+  margin: 0; /* Supprime les marges */
+  padding: 0; /* Supprime le padding */
+}
+
+.date-container {
+  background-color: #eee;
+  padding: 5px 10px;
+  margin-top: 10px;
+  text-align: center;
+  flex-shrink: 0; /* Évite que la taille de la date change */
+  height: 40px; /* Assure une hauteur constante pour toutes les dates */
 }

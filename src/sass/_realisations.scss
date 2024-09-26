@@ -1,56 +1,74 @@
-.card-container {
-  display: flex; // Utilise Flexbox pour l'alignement
-  flex-wrap: wrap; // Permet aux cartes de passer à la ligne si nécessaire
-  justify-content: space-between; // Distribue l'espace entre les cartes
-  margin: 20px; // Ajoute une marge autour du conteneur
+.card-realisation {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  height: 20rem;
+  width: 20rem;
+  margin-bottom: 100px; /* Ajoute de l'espace en bas de chaque carte */
+  overflow: hidden;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* Ajoutez la transition pour transform */
 
-  .card-service-realisation {
-    flex: 1 1 calc(30% - 20px); // Définit la largeur des cartes, ajustez selon vos besoins
-    margin: 10px; // Ajoute un espace autour de chaque carte
-    min-width: 250px; // Largeur minimale pour garder l'affichage lisible
-
-    .card-realisation {
-      background-color: #fff; // Couleur de fond pour la carte
-      border-radius: 15px; // Arrondir les bords de 15px
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Ombre douce autour de la carte
-      padding: 20px; // Espace intérieur
-      height: 20rem;
-
-      transition: box-shadow 0.3s ease-in-out; // Transition fluide lors du hover
-
-      &:hover {
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); // Ombre plus prononcée au survol
-      }
-
-      .card-img-realisation {
-        margin-top: 20px; // Espace au-dessus de l'image
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 24px;
-        height: 24px;
-      }
-
-      .card-body-realisation {
-        margin-top: 20px;
-        text-align: center;
-
-        h2 {
-          font-size: 1.5rem;
-          margin-bottom: 10px;
-        }
-
-        .card-text-realisation {
-          font-size: 1rem;
-          line-height: 1.5;
-          color: #333;
-        }
-      }
-
-      .card-footer-realisation {
-        margin-top: 15px;
-        text-align: center;
-      }
-    }
+  &:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Agrandir la carte de 5% au survol */
   }
+
+  .card-img-realisation {
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.card-body-realisation {
+  margin-top: 20px;
+  text-align: center;
+
+  .card-text-realisation {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+  }
+}
+
+.card-footer-realisation {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.black-link {
+  color: black; /* Change la couleur du texte en noir */
+}
+
+.black-link:hover {
+  text-decoration: underline; /* Ajoute un soulignement au survol si souhaité */
+}
+.background-image {
+  width: 100%; /* Prend toute la largeur */
+  height: 150px; /* Ajustez cette valeur selon vos besoins */
+  object-fit: cover; /* Garde les proportions et couvre toute la zone */
+  display: block; /* Évite les espaces indésirables */
+  margin: 0; /* Supprime les marges */
+  padding: 0; /* Supprime le padding */
+}
+
+.services-container {
+  text-align: center; /* Centre le texte */
+  margin: 0; /* Supprime les marges autour du conteneur */
+  padding: 0; /* Supprime le padding autour du conteneur */
+  width: 100%; /* Assurez-vous que le conteneur prend toute la largeur */
+}
+.portfolio-title {
+  margin-top: 20px; /* Ajustez la valeur selon vos besoins */
+}
+.divider {
+  height: 5px; /* Épaisseur de la ligne */
+  background-color: #003366 !important; /* Couleur bleu foncé */
+  margin: 20px auto; /* Centré avec auto */
+  width: 15%; /* Largeur de 10% */
+  border: none; /* Supprime tout bord par défaut */
 }

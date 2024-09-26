@@ -28,10 +28,35 @@ export default function Navliens() {
               <br />
             </p>
             <p className="information">
-              40 rue Laure Diebold <br />
-              69009 Lyon,France <br />
-              Téléphone : 06 20 30 40 50 <br />
+              <span>40 rue Laure Diebold</span>
+              <br />
+              <span>69009 Lyon, France</span>
+              <br />
+              <span>Téléphone : 06 20 30 40 50</span>
             </p>
+            <div className="social-links">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/github-brands-solid.svg" alt="GitHub" />
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/twitter-brands-solid.svg" alt="Twitter" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/linkedin-brands-solid.svg" alt="LinkedIn" />
+              </a>
+            </div>
           </h1>
           <div></div>
           <div className="liens">
@@ -67,7 +92,7 @@ export default function Navliens() {
         </div>
         <div className="basdepage">
           <div className="DesigBy">
-            <p>Designed by john Doe</p>
+            <p>Designed by John Doe</p>
           </div>
           <br />
         </div>

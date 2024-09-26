@@ -3,10 +3,15 @@ import React from "react";
 export default function Services() {
   return (
     <div className="services-container">
-      <h1 className="portfolio-title">Mon OFFRES DE SERVICES</h1>
+      {/* Ajoutez l'image ici */}
+      <img src="/fond02.jpg" alt="Background" className="background-image" />
+      <h1 className="portfolio-title">MON OFFRES DE SERVICES</h1>
       <p className="portfolio-subtitle">
         Voici les prestations sur lesquelles je peux intervenir.
       </p>
+      <hr className="divider" />
+
+      <br />
       <div className="card-container">
         <Card
           image="desktop-solid.svg"
@@ -31,6 +36,7 @@ export default function Services() {
                 href="https://developer.mozilla.org/fr/docs/Web/HTML"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="black-link"
               >
                 HTML
               </a>
@@ -39,6 +45,7 @@ export default function Services() {
                 href="https://developer.mozilla.org/fr/docs/Web/CSS"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="black-link"
               >
                 CSS
               </a>
@@ -47,6 +54,7 @@ export default function Services() {
                 href="https://developer.mozilla.org/fr/docs/Web/JavaScript"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="black-link"
               >
                 JavaScript
               </a>{" "}
@@ -55,6 +63,7 @@ export default function Services() {
                 href="https://www.php.net/"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="black-link"
               >
                 PHP
               </a>
